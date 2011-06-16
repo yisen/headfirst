@@ -39,6 +39,11 @@ class Duck
 		{
 			ifly->fly();
 		}
+		//setter method
+		void set_fly(Ifly *fly)
+		{
+			ifly = fly;
+		}
 		//共有行为
 		virtual void swim()
 		{
@@ -58,6 +63,8 @@ class ADuck : public Duck
 int main(int argc, char *argv[])
 {
 	Duck *yisen = new ADuck();
+	yisen->dofly();
+	yisen->set_fly(new FlyNoWay());
 	yisen->dofly();
 	yisen->swim();
 	return 0;
