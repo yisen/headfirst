@@ -60,6 +60,24 @@ class ADuck : public Duck
 		}
 };
 
+class DuckCall
+{
+	public:
+		Ifly *ifly;
+		DuckCall()
+		{
+			ifly = new FlyWithWings();
+		}
+		void set_fly(Ifly * fly)
+		{
+			ifly = fly;
+		}
+		void dofly()
+		{
+			ifly->fly();
+		}
+};
+
 int main(int argc, char *argv[])
 {
 	Duck *yisen = new ADuck();
@@ -67,6 +85,9 @@ int main(int argc, char *argv[])
 	yisen->set_fly(new FlyNoWay());
 	yisen->dofly();
 	yisen->swim();
+
+	DuckCall duckcall;
+	duckcall.dofly();
 	return 0;
 }
 
