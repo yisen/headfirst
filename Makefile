@@ -19,4 +19,4 @@ Decorator.o: Decorator.cpp
 	g++ -O0 -g3 -c Decorator.cpp
 
 clean:
-	@rm *.o Strategy Observer -f
+	@rm *.o Strategy Observer Decorator -f
