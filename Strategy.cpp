@@ -6,6 +6,7 @@ using namespace std;
 class Ifly
 {
 	public:
+		virtual ~Ifly() {};
 		virtual void fly() = 0;
 };
 
@@ -32,6 +33,7 @@ class FlyNoWay : public Ifly
 class Duck
 {
 	public:
+		virtual ~Duck() {};
 		//需要实现的行为
 		virtual void dofly()
 		{
@@ -45,7 +47,7 @@ class Duck
 		//纯虚函数，该类为抽象基类，子类如果不实现，则子类还是抽象类
 		virtual void swim() = 0;
 		//虚函数要有默认的实现
-		virtual void display() {};
+		virtual void display()  const {};
 	protected:
 		//要用到的接口，必须为指针
 		Ifly *ifly;
@@ -62,7 +64,7 @@ class ADuck : public Duck
 		{
 			cout << "swim" << endl;
 		}
-		void display()
+		void display() const
 		{
 			cout << "I'm a ADuck" << endl;
 		}

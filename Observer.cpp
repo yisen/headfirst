@@ -7,6 +7,7 @@ using namespace std;
 class IObserver
 {
 	public:
+		virtual ~IObserver() {};
 		virtual void update(int tmp, int humidity, int pressure) = 0;
 };
 
@@ -14,6 +15,7 @@ class IObserver
 class ISubject
 {
 	public:
+		virtual ~ISubject() {};
 		virtual void register_observer(IObserver *o) = 0;
 		virtual void remove_observer(IObserver *o) = 0;
 		virtual void notify_observer() const = 0;
@@ -23,6 +25,7 @@ class ISubject
 class IDisplay
 {
 	public:
+		virtual ~IDisplay() {};
 		virtual void display() const = 0;
 };
 
